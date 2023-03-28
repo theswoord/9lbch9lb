@@ -12,15 +12,11 @@ int size;
 int *arr;
 }t_stack;
 
-// typedef struct s_b
-// {
-// int top;
-// int size;
-// int *data;
-// }t_b;
 typedef struct S_heck{
 char *strtwil;
 char **tableau;
+int *copy;
+int *indexes;
 
 }t_heck;
 
@@ -31,4 +27,31 @@ void saisie(t_heck *checks, t_stack *stack );
 void duplicata(t_stack *stack);
 void errors();
 long    ft_latoi(const char *str);
+void printer(t_stack *stacka, t_stack *stackb, t_heck *checks);
+void printz(t_stack *stacka, t_stack *stackb);
+void allocator(t_stack *stacka, t_stack *stackb, t_heck *checks);
+int allspaces(char *str);
+void swapper(int *p1 , int *p2 );
+void rotator(t_stack *stack);
+void reverserotator(t_stack *stack);
+void backsort(t_stack *stack, t_heck *checks);
+// void selectionSort(int *arr, int n);
+void sa(t_stack *stacka, t_stack *stackb);
+void sb(t_stack *stacka, t_stack *stackb);
+void ss(t_stack *stacka, t_stack *stackb);
+void pa(t_stack *stacka, t_stack *stackb);
+void pb(t_stack *stacka, t_stack *stackb);
+void rrr(t_stack *stacka, t_stack *stackb);
+void ra(t_stack *stacka, t_stack *stackb);
+void rb(t_stack *stacka, t_stack *stackb);
+void rr(t_stack *stacka, t_stack *stackb);
+void rra(t_stack *stacka, t_stack *stackb);
+void rrb(t_stack *stacka, t_stack *stackb);
+int khawi(t_stack *stack);
+int aamr(t_stack *stack);
+void push(t_stack *stack, int intiger);
+void pop(t_stack *stack);
+void instructor(t_stack *stacka , t_stack *stackb);
+void indicekeeper(t_stack *stacka,t_heck *checks);
+int sortedascending(t_stack *stacka);
 #endif

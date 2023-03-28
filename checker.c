@@ -45,21 +45,21 @@ void digitizer(t_heck *checks, t_stack *stack)
                 if(checks->tableau[i][j]=='+' || checks->tableau[i][j]=='-' )
                 {
                     j++;
-                    if(!ft_isdigit(checks->tableau[i][j]))
+                if(!ft_isdigit(checks->tableau[i][j]))
                 {
                     write(1, "Error\n", 6);
                     // ft_printf("%s \n",checks->tableau[i]);
-                    ft_printf("mochkil f %c \n",checks->tableau[i][j]);
+                    // ft_printf("mochkil f %c \n",checks->tableau[i][j]);
  
-                    exit(0);
+                    exit(1);
                 }
                 // j++;
                 if(j != 1 &&ft_isdigit(checks->tableau[i][j-2]))
                 {
                     write(1, "Error\n", 6);
 
-                    ft_printf(";protection;%s \n",checks->tableau[i]);
-                    exit(0);
+                    // ft_printf(";protection;%s \n",checks->tableau[i]);
+                    exit(1);
                 }
                 }
 
@@ -67,8 +67,8 @@ void digitizer(t_heck *checks, t_stack *stack)
             else
             {
                      write(1, "Error\n", 6);
-                    ft_printf("%s \n",checks->tableau[i]);
-                    exit(0);
+                    // ft_printf("%s \n",checks->tableau[i]);
+                    exit(1);
             }
             j++;
 
@@ -81,9 +81,10 @@ void digitizer(t_heck *checks, t_stack *stack)
 void saisie(t_heck *checks, t_stack *stack)
 {
 int i = 0;
-ft_printf("%d \n", stack->size);
-    free(stack->arr);
-    stack->arr = malloc(stack->size);
+    stack->fogani = stack->size-1;
+int j = stack->size-1;
+// ft_printf("%d \n", stack->size);
+
 
 
     while (checks->tableau[i])
@@ -93,10 +94,13 @@ ft_printf("%d \n", stack->size);
         if(ft_latoi(checks->tableau[i]) < -2147483648)
             errors();
    
-        stack->arr[i] = ft_atoi(checks->tableau[i]);
+        stack->arr[i] = ft_atoi(checks->tableau[j]);
+        checks->copy[i] =ft_atoi(checks->tableau[j]);
+        checks->indexes[i] = i;
+        j--;
         i++;
+        // j--;
     }
-
 }
 void duplicata(t_stack *stack){
 
