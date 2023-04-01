@@ -51,7 +51,6 @@ char *kassama(int ac, char **av)
     int i = 1;
     char *ster;
     ster =malloc(1);
-
     while (i < ac)
     {
         if(allspaces(av[i])==1)
