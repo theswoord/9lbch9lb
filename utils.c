@@ -264,7 +264,7 @@ int tester = 0;
 
 int i = 0;
 int ranger = 0;
-int range = rangefinder(stacka->size);
+int range = rangefinder(stacka->size)-1;
 // tester = sortedascending(stacka);
 	if (sortedascending(stacka)==0)
 		errors();
@@ -275,8 +275,8 @@ int range = rangefinder(stacka->size);
 // 	ft_printf("scrambled \n");
 if (stacka->size == 2)
 	sortdial3(stacka,stackb);
-if (stacka->size == 3)
-	sortdial3(stacka,stackb);
+// if (stacka->size == 3)
+// 	sortdial3(stacka,stackb);
 if (stacka->size == 4)
 	sortdial5(stacka,stackb);
 if (stacka->size == 5)
@@ -284,21 +284,24 @@ if (stacka->size == 5)
 if (stacka->size >= 100 ){
 	// ranger = 3;
 	// printf("/%d\n",searchinrange(stacka,stacka->fogani, stacka->fogani-ranger, stacka->arr[stacka->fogani]));
-	while (stacka->fogani != 0)
+	// printf("%d\n",stackb->fogani);
+	while (stacka->fogani + 1)
 	{
-		if (stacka->arr[stacka->fogani]>ranger){
-			pb(stacka,stackb);
-			ranger ++;
-		}
-		else if (stacka->arr[stacka->fogani]<range+ranger){
-			ra(stacka,stackb);
-		}
-		else if (stacka->arr[stacka->fogani]<ranger && stacka->arr[stacka->fogani] > ranger+range){
+		if (stacka->arr[stacka->fogani] <= ranger)
+		{
 			pb(stacka,stackb);
 			ra(stacka,stackb);
 			ranger ++;
 		}
-		printf("%d,ranger = %d\n", stacka->fogani, ranger);
+		else if (stacka->arr[stacka->fogani] > ranger && stacka->arr[stacka->fogani] < ranger + range){
+			pb(stacka,stackb);
+			ranger ++;
+		}
+		else
+		{
+			ra(stacka,stackb);
+		}
+		// printf("%d,ranger = %d\n", stacka->fogani, ranger);
 	}
 	
 

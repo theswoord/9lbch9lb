@@ -36,7 +36,7 @@ int main(int ac, char **av)
     instructor(stacka,stackb);
 
     
-    printer(stacka,stackb,checks);
+    // printer(stacka,stackb,checks);
     // printz(stacka,stackb);
     // for (size_t d = 0; d < 11; d++)
     // {
