@@ -16,7 +16,7 @@ typedef struct S_heck{
 char *strtwil;
 char **tableau;
 int *copy;
-int *indexes;
+// int *indexes;
 
 }t_heck;
 
@@ -54,4 +54,12 @@ void pop(t_stack *stack);
 void instructor(t_stack *stacka , t_stack *stackb);
 void indicekeeper(t_stack *stacka,t_heck *checks);
 int sortedascending(t_stack *stacka);
+int sorteddescending(t_stack *stacka);
+void sortdial3(t_stack *stacka, t_stack *stackb);
+void sortdial5(t_stack *stacka,t_stack *stackb);
+void sortdial4(t_stack *stacka,t_stack *stackb);
+int findsmallest(int number ,t_stack *stack);
+int wachbiggest(int number,t_stack *stacka);
+int rangefinder(int size);
+int searchinrange(t_stack *stack, int start , int finish, int number);
 #endif

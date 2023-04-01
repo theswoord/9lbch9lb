@@ -34,6 +34,8 @@ int main(int ac, char **av)
     backsort(stacka, checks);
 	indicekeeper(stacka,checks);
     instructor(stacka,stackb);
+
+    
     printer(stacka,stackb,checks);
     // printz(stacka,stackb);
     // for (size_t d = 0; d < 11; d++)
@@ -47,7 +49,8 @@ char *kassama(int ac, char **av)
 {
 
     int i = 1;
-    char *ster = malloc(1);
+    char *ster;
+    ster =malloc(1);
 
     while (i < ac)
     {

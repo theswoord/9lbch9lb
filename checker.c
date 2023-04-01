@@ -6,34 +6,6 @@ void digitizer(t_heck *checks, t_stack *stack)
     int j = 0;
     int kayna = 0;
 
-    // while (checks->strtwil[i])
-    // {
-
-    //     if (ft_isdigit(checks->strtwil[i]) == 1 || checks->strtwil[i] == '-' || checks->strtwil[i] == '+' || checks->strtwil[i] == ' ')
-    //     {
-    //         if (checks->strtwil[i] == '-' || checks->strtwil[i] == '+')
-    //         {
-    //             if (ft_isdigit(checks->strtwil[i + 1]) == 0)
-    //             {
-    //                 write(1, "Error\n", 6);
-    //                 exit(0);
-    //             }
-    //         }
-
-    //         i++;
-    //     }
-    //     else
-    //     {
-    //         write(1, "Error\n", 6);
-    //         exit(0);
-    //     }
-    //     saisie(checks, stack);
-    // }
-    //     if(ft_strnstr(checks->strtwil,"  ",ft_strlen(checks->strtwil)))
-    //     {
-    //     ft_printf("tga3ad\n");
-    //     exit(0);
-    // }
     while(checks->tableau[i])
     {
         stack->size++;
@@ -89,6 +61,9 @@ int j = stack->size-1;
 
     while (checks->tableau[i])
     {
+        if(ft_strlen(checks->tableau[i])> 10)
+            errors();
+
         if(ft_latoi(checks->tableau[i]) > 2147483647)
             errors();
         if(ft_latoi(checks->tableau[i]) < -2147483648)
@@ -96,7 +71,7 @@ int j = stack->size-1;
    
         stack->arr[i] = ft_atoi(checks->tableau[j]);
         checks->copy[i] =ft_atoi(checks->tableau[j]);
-        checks->indexes[i] = i;
+        // checks->indexes[i] = i;
         j--;
         i++;
         // j--;
