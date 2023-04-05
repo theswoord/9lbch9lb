@@ -84,8 +84,7 @@ void printer(t_stack *stacka, t_stack *stackb, t_heck *checks)
 	// sa(stacka,stackb);
 	// sa(stacka,stackb);
 	// sa(stacka,stackb);
-
-	
+	// printf("hhh..%d\n",chkonbiggest(stacka));
 	// for (size_t k = 0; k < stacka->fogani; k++)
 	// {
 	//     ft_printf("a [%d] %d\n",k, checks->indexes[k]);
@@ -281,28 +280,80 @@ if (stacka->size == 4)
 	sortdial5(stacka,stackb);
 if (stacka->size == 5)
 	sortdial5(stacka,stackb);
-if (stacka->size >= 100 ){
+if (stacka->size >= 20 ){
 	// ranger = 3;
 	// printf("/%d\n",searchinrange(stacka,stacka->fogani, stacka->fogani-ranger, stacka->arr[stacka->fogani]));
 	// printf("%d\n",stackb->fogani);
+	int kbir = stacka->fogani;
+
+	int kbir3la2 = (stackb->fogani)/2;
 	while (stacka->fogani + 1)
 	{
-		if (stacka->arr[stacka->fogani] < ranger)
+		if (stacka->arr[stacka->fogani] <= ranger)
 		{
 			pb(stacka,stackb);
 			rb(stacka,stackb);
-			ranger ++;
+			ranger++;
 		}
-		else if (stacka->arr[stacka->fogani] > ranger && stacka->arr[stacka->fogani] < ranger + range){
+		else if (stacka->arr[stacka->fogani] <= ranger + range /*stacka->arr[stacka->fogani] >= ranger - range*/){
 			pb(stacka,stackb);
-			ranger ++;
+			ranger++;
 		}
 		else
-		{
 			ra(stacka,stackb);
-		}
-		// printf("%d,ranger = %d\n", stacka->fogani, ranger);
 	}
+	int finkayn;
+	int walo;
+	finkayn = 0;
+	while (stackb->fogani+1)
+	{
+	finkayn=chkonbiggest(stackb);
+	// printf("..%d\n",finkayn);
+	// exit(0);
+			// finkayn=chkonbiggest(stackb);
+
+		// printf("fin*%d ##%d realy = %d\n",finkayn,stackb->arr[stackb->fogani],stackb->fogani);
+		// exit(0);
+
+		// while (stackb->arr[stackb->fogani] == kbir)
+
+		
+		// {
+		// 	pa(stacka,stackb);
+		// 	finkayn=chkonbiggest(stackb);
+		// 	kbir--;
+			
+		// }
+		// if (finkayn >= stackb->fogani /2)
+		// {
+		// 	rb(stacka,stackb);
+		// 	/* code */
+		// }
+		// else if (finkayn <= stackb->fogani /2)
+		// 	rrb(stacka,stackb);
+		
+		while (stackb->arr[stackb->fogani] != kbir){
+		 
+		if (finkayn > stackb->fogani /2 )
+		{
+			rb(stacka,stackb);
+			// kbir3la2--;
+		}
+		else 
+			rrb(stacka,stackb);
+			// kbir3la2--;
+		
+		}
+		
+			pa(stacka,stackb);
+			kbir--;
+		
+		// walo = kbir / 2;
+		// printf("%d\n",searchinrange(stackb,stackb->fogani,(kbir/2),stackb->arr[stackb->fogani]));
+		
+	}
+	
+		// printf("%d,ranger = %d\n", stacka->fogani, ranger);
 	
 
 }
@@ -335,7 +386,7 @@ while (i < stacka->size)
 		
 		if (stacka->arr[i] == checks->copy[j])
 		{
-			stacka->arr[i] = j;
+			stacka->arr[i] = stacka->fogani - j;
 			j = stacka->size;
 			/* code */
 		}
@@ -373,7 +424,7 @@ void sortdial3(t_stack *stacka, t_stack *stackb){
 
 
 
-	if(stacka->arr[0] == stacka->arr[stacka->fogani - 1]+1 || stacka->arr[stacka->fogani - 1] == stacka->arr[stacka->fogani]+1)
+	if(stacka->arr[0] == stacka->arr[stacka->fogani - 1]-1 || stacka->arr[stacka->fogani - 1] == stacka->arr[stacka->fogani]-1) // nabil please fix sort dial 3 
 	{
 		sa(stacka,stackb);
 	}
@@ -511,7 +562,31 @@ int wachbiggest(int number,t_stack *stacka){
 int searchinrange(t_stack *stack, int start , int finish, int number){
 
 	int i = start;
+	int temp = start;
 
+	while (i > finish && i <= start)
+	{
+		if(number < stack->arr[i]){
+		// printf("kbir\n");
+		return 0;
+		// temp = stack->arr[i];
+		printf("ra9m diali %d \t ra9m li testit %d \n",number, temp);
+			// return (1); //sghir mn range kamlo;
+		}
+		// return (1);
+
+		// if(number <= stack->arr[i]){
+		// printf("sghir\n");
+		// 	return (-1); // kber mn range kamlo;
+		// }
+		// printf("range is %d\n", stack->arr[i]);
+	i--;
+	}
+	return (1);
+}
+int finkayninrange(t_stack *stack, int start , int finish, int number){
+
+	int i = start;
 	while (i > finish && i <= start)
 	{
 		if(number >= stack->arr[i])
@@ -522,4 +597,24 @@ int searchinrange(t_stack *stack, int start , int finish, int number){
 	i--;
 	}
 	return 0;
+}
+int chkonbiggest(t_stack *stack){
+	int i = 0;
+	int big = stack->arr[0];
+	int max_index = 0;
+	while (i <= stack->fogani)
+	{
+		if (big < stack->arr[i])
+		{
+			
+			big = stack->arr[i];
+			max_index = i;	
+
+			// printf(".%d,,,%d \n",stack->arr[max_index],max_index);
+		}
+
+
+		i++;
+	}
+	return(max_index);
 }

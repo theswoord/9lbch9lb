@@ -62,4 +62,5 @@ int findsmallest(int number ,t_stack *stack);
 int wachbiggest(int number,t_stack *stacka);
 int rangefinder(int size);
 int searchinrange(t_stack *stack, int start , int finish, int number);
+int chkonbiggest(t_stack *stack);
 #endif

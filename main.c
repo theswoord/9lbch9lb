@@ -33,6 +33,8 @@ int main(int ac, char **av)
     duplicata(stacka);
     backsort(stacka, checks);
 	indicekeeper(stacka,checks);
+    // printer(stacka,stackb,checks);
+
     instructor(stacka,stackb);
 
     
