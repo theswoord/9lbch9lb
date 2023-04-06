@@ -4,7 +4,7 @@ void digitizer(t_heck *checks, t_stack *stack)
 {
     int i = 0;
     int j = 0;
-    int kayna = 0;
+    // int kayna = 0;
 
     while(checks->tableau[i])
     {

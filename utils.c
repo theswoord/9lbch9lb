@@ -77,7 +77,7 @@ void printer(t_stack *stacka, t_stack *stackb, t_heck *checks)
 	// int d = checks->indexes[stacka->fogani];
 
 		int a = stacka->fogani;
-	int b = stacka->fogani;
+	// int b = stacka->fogani;
 
 	// ft_printf("fo9ani a: %d\n", i);
 	// ft_printf("fo9ani b: %d\n", j);
@@ -171,9 +171,7 @@ void rotator(t_stack *stack)
 	}
 	stack->arr[0] = temp;
 }
-// void pusher(t_stack *stacka, t_stack *stackb){
 
-// }
 void reverserotator(t_stack *stack)
 {
 	int temp;
@@ -232,7 +230,6 @@ void push(t_stack *stack, int intiger)
 {
 
 	if (aamr(stack) == 1){
-		ft_printf("hhh stack li siftini lih 3amr \n");
 		return;
 
 	}
@@ -246,8 +243,6 @@ void pop(t_stack *stack)
 {
 	int i = 0;
 	if (khawi(stack) == 1){
-		ft_printf("hhh stack li siftini lih khawi \n");
-
 		return;
 	}
 	else
@@ -259,34 +254,44 @@ void pop(t_stack *stack)
 
 void instructor(t_stack *stacka , t_stack *stackb){
 
-int tester = 0;
+// int tester = 0;
 
-int i = 0;
-int ranger = 0;
-int range = rangefinder(stacka->size);
+// int i = 0;
+
 // tester = sortedascending(stacka);
 	if (sortedascending(stacka)==0)
-		errors();
-// if (tester == 0)
-// 	ft_printf("sorted \n");
+		exit(0);
+		// errors();
 
-// if (tester == 1)
-// 	ft_printf("scrambled \n");
-if (stacka->size == 2)
+else if (stacka->size == 2)
 	sortdial3(stacka,stackb);
-if (stacka->size == 3)
+else if (stacka->size == 3)
 	sortdial3(stacka,stackb);
-if (stacka->size == 4)
+else if (stacka->size == 4)
+	sortdial4(stacka,stackb);
+else if (stacka->size == 5)
 	sortdial5(stacka,stackb);
-if (stacka->size == 5)
-	sortdial5(stacka,stackb);
-if (stacka->size >= 20 ){
-	// ranger = 3;
-	// printf("/%d\n",searchinrange(stacka,stacka->fogani, stacka->fogani-ranger, stacka->arr[stacka->fogani]));
-	// printf("%d\n",stackb->fogani);
+else if (sorteddescending(stacka)==0)
+{
+	while (stacka->fogani + 1)
+	{
+		pb(stacka,stackb);
+
+	}
+	while (stackb->fogani + 1)
+	{
+		rrb(stacka,stackb);
+		pa(stacka,stackb);
+
+	}
+}
+else if (stacka->size > 5 ){
+	int ranger = 0;
+int range = rangefinder(stacka->size);
+
 	int kbir = stacka->fogani;
 
-	int kbir3la2 = (stackb->fogani)/2;
+	// int kbir3la2 = (stackb->fogani)/2;
 	while (stacka->fogani + 1)
 	{
 		if (stacka->arr[stacka->fogani] <= ranger)
@@ -303,73 +308,32 @@ if (stacka->size >= 20 ){
 			ra(stacka,stackb);
 	}
 	int finkayn;
-	int walo;
-	finkayn = 0;
+	// int walo;
+	// finkayn = 0;
 	while (stackb->fogani+1)
 	{
 	finkayn=chkonbiggest(stackb);
-	// printf("..%d\n",finkayn);
-	// exit(0);
-			// finkayn=chkonbiggest(stackb);
-
-		// printf("fin*%d ##%d realy = %d\n",finkayn,stackb->arr[stackb->fogani],stackb->fogani);
-		// exit(0);
-
-		// while (stackb->arr[stackb->fogani] == kbir)
-
-		
-		// {
-		// 	pa(stacka,stackb);
-		// 	finkayn=chkonbiggest(stackb);
-		// 	kbir--;
-			
-		// }
-		// if (finkayn >= stackb->fogani /2)
-		// {
-		// 	rb(stacka,stackb);
-		// 	/* code */
-		// }
-		// else if (finkayn <= stackb->fogani /2)
-		// 	rrb(stacka,stackb);
-		
+	
 		while (stackb->arr[stackb->fogani] != kbir){
 		 
 		if (finkayn > stackb->fogani /2 )
-		{
 			rb(stacka,stackb);
-			// kbir3la2--;
-		}
 		else 
 			rrb(stacka,stackb);
-			// kbir3la2--;
 		
 		}
+		pa(stacka,stackb);
+		kbir--;
 		
-			pa(stacka,stackb);
-			kbir--;
 		
-		// walo = kbir / 2;
-		// printf("%d\n",searchinrange(stackb,stackb->fogani,(kbir/2),stackb->arr[stackb->fogani]));
 		
 	}
 	
-		// printf("%d,ranger = %d\n", stacka->fogani, ranger);
+	
 	
 
 }
-	// if(stacka)
-	// asghar nombre 3ndo indice 0
-	// tri o khas indice ib9a m7afd 3la valeur
-	// 15 17 2 : 2 1 0
-	int num = 0;
-	int cte = 10;
-	//// while num < size 
-	// if( top dial a < num ) pb
-	// top if (num + chunk > a >num ) pb
-	// if (a > num + chunk) ra
-	//// num++;
 
-	//if pb num++ || if 15 pb num ++
 
 }
 
@@ -398,11 +362,11 @@ while (i < stacka->size)
 	}
 	
 }
-int sortedascending(t_stack *stacka){
+int sorteddescending(t_stack *stacka){
 
 	int i; 
 	int result = 0;
-	int j = 0;
+	// int j = 0;
 	i=0;
 
 	while(i < stacka->fogani){
@@ -424,22 +388,39 @@ void sortdial3(t_stack *stacka, t_stack *stackb){
 
 
 
-	if(stacka->arr[0] == stacka->arr[stacka->fogani - 1]-1 || stacka->arr[stacka->fogani - 1] == stacka->arr[stacka->fogani]-1) // nabil please fix sort dial 3 
+	if(stacka->arr[0] == stacka->arr[stacka->fogani - 1]-1 || stacka->arr[stacka->fogani - 1] == stacka->arr[stacka->fogani]-1)
 	{
 		sa(stacka,stackb);
 	}
-	if(stacka->arr[0]== 1)
+	if(stacka->arr[0] > stacka->arr[stacka->fogani -1]&& stacka->arr[0] < stacka->arr[stacka->fogani])
 	ra(stacka,stackb);
-	if(stacka->arr[stacka->fogani] > stacka->arr[stacka->fogani - 1] && stacka->arr[stacka->fogani] < stacka->arr[0])
+	if(stacka->arr[stacka->fogani] < stacka->arr[stacka->fogani - 1] && stacka->arr[stacka->fogani] > stacka->arr[0] )
 	rra(stacka,stackb);
 }
+// void sortdial3(t_stack *stacka, t_stack *stackb){
+
+
+// sorted[2] 1              stack a [2] 2//0 
+// sorted[1] 2              stack a [1] 4//2 	 stack b[1]	1
+// sorted[0] 3              stack a [0] 3//1 	 stack b[0] 0
+
+
+// 	if(stacka->arr[0] == stacka->arr[stacka->fogani - 1]+1 || stacka->arr[stacka->fogani - 1] == stacka->arr[stacka->fogani] + 1) // nabil please fix sort dial 3 
+// 	{
+// 		sa(stacka,stackb);
+// 	}
+// 	if(stacka->arr[0]== 1)
+// 	ra(stacka,stackb);
+// 	if(stacka->arr[stacka->fogani] < stacka->arr[stacka->fogani - 1] && stacka->arr[stacka->fogani] > stacka->arr[0])
+// 	rra(stacka,stackb);
+// }
 int findsmallest(int number ,t_stack *stack){
 
 int i = 0;
 int bigger = stack->arr[0];
 	while (i <= stack->fogani)
 	{
-		if (bigger  < stack->arr[i])
+		if (bigger  > stack->arr[i])
 			bigger = stack->arr[i];
 		
 		i++;
@@ -449,11 +430,11 @@ int bigger = stack->arr[0];
 	return (bigger == number);
 
 }
-int sorteddescending(t_stack *stacka){
+int sortedascending(t_stack *stacka){
 
 	int i; 
 	int result = 0;
-	int j = 0;
+	// int j = 0;
 	i=0;
 
 	while(i < stacka->fogani){
@@ -476,26 +457,24 @@ void sortdial5(t_stack *stacka,t_stack *stackb){
 	while (findsmallest(stacka->arr[stacka->fogani],stacka) == 0){
 
 
-	if (sorteddescending(stacka)==0)
-	{
-		rra(stacka,stackb);
-	// ft_printf("sorted mglobin\n");
-	/* code */
-	}
-	else
+	// if (sortedascending(stacka)==0)
+	// {
+	// 	rra(stacka,stackb);
+	// }
+	// else
 	ra(stacka,stackb);
 
 	}
 	pb(stacka,stackb);
 	while (findsmallest(stacka->arr[stacka->fogani],stacka) == 0){
 
-	if (sorteddescending(stacka)==0)
-	{
-	// ft_printf("sorted mglobin\n");
-	/* code */
-		rra(stacka,stackb);
-	}
-	else
+	// if (sortedascending(stacka)==0)
+	// {
+	// // ft_printf("sorted mglobin\n");
+	// /* code */
+	// 	rra(stacka,stackb);
+	// }
+	// else
 	ra(stacka,stackb);
 
 	}
@@ -516,14 +495,12 @@ int rangefinder(int size){
 }
 void sortdial4(t_stack *stacka,t_stack *stackb){
 
+		// printf("%d\n",findsmallest(stacka->arr[stacka->fogani],stacka));
 	while (findsmallest(stacka->arr[stacka->fogani],stacka) == 0){
 
-
-	if (sorteddescending(stacka)==0)
+	if (sortedascending(stacka)==0)
 	{
 		rra(stacka,stackb);
-	// ft_printf("sorted mglobin\n");
-	/* code */
 	}
 	else
 	ra(stacka,stackb);
@@ -562,7 +539,7 @@ int wachbiggest(int number,t_stack *stacka){
 int searchinrange(t_stack *stack, int start , int finish, int number){
 
 	int i = start;
-	int temp = start;
+	// int temp = start;
 
 	while (i > finish && i <= start)
 	{
@@ -570,7 +547,6 @@ int searchinrange(t_stack *stack, int start , int finish, int number){
 		// printf("kbir\n");
 		return 0;
 		// temp = stack->arr[i];
-		printf("ra9m diali %d \t ra9m li testit %d \n",number, temp);
 			// return (1); //sghir mn range kamlo;
 		}
 		// return (1);

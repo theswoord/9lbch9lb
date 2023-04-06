@@ -2,7 +2,7 @@
 #include <stdio.h>
 int main(int ac, char **av)
 {
-    int test = 0;
+    // int test = 0;
 
     t_stack *stacka;
     t_stack *stackb;
