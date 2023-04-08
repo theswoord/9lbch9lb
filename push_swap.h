@@ -3,7 +3,7 @@
 #include "./libft/libft.h"
 #include "./gnl/get_next_line.h"
 #include "./printf/ft_printf.h"
-#include <limits.h>
+// #include <limits.h>
 
 typedef struct s_stack
 {
@@ -15,7 +15,9 @@ int *arr;
 typedef struct S_heck{
 char *strtwil;
 char **tableau;
+int tableauindex;
 int *copy;
+
 // int *indexes;
 
 }t_heck;
@@ -25,7 +27,7 @@ char* kassama(int ac,char **av);
 void digitizer(t_heck *checks, t_stack *stack);
 void saisie(t_heck *checks, t_stack *stack );
 void duplicata(t_stack *stack);
-void errors();
+void errors(t_heck *checks, t_stack *stack,int code);
 long    ft_latoi(const char *str);
 void printer(t_stack *stacka, t_stack *stackb, t_heck *checks);
 void printz(t_stack *stacka, t_stack *stackb);
@@ -55,6 +57,7 @@ void instructor(t_stack *stacka , t_stack *stackb);
 void indicekeeper(t_stack *stacka,t_heck *checks);
 int sortedascending(t_stack *stacka);
 int sorteddescending(t_stack *stacka);
+void sortdial2(t_stack *stacka,t_stack *stackb);
 void sortdial3(t_stack *stacka, t_stack *stackb);
 void sortdial5(t_stack *stacka,t_stack *stackb);
 void sortdial4(t_stack *stacka,t_stack *stackb);
@@ -63,4 +66,7 @@ int wachbiggest(int number,t_stack *stacka);
 int rangefinder(int size);
 int searchinrange(t_stack *stack, int start , int finish, int number);
 int chkonbiggest(t_stack *stack);
+void freeingmachine(char **tableau, void *ptr , t_heck *checks, t_stack *stack,int size);
+void errorssghar(t_heck *checks, int size);
+void twodstrlen(t_heck *checks);
 #endif

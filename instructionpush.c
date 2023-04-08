@@ -3,7 +3,6 @@
 
 void pa(t_stack *stacka, t_stack *stackb){
 
-    // stackb->arr[stackb->fogani]= stacka->arr[0];
      push(stacka,stackb->arr[stackb->fogani]);
     pop(stackb);
     ft_printf("pa\n");
