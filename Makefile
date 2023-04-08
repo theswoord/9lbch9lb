@@ -2,7 +2,7 @@
 
 
 
-SRC = checker.c instructionpush.c instructionsrotate.c instructionsswap.c main.c output.c utils.c
+SRC = checker.c instructionpush.c instructionsrotate.c instructionsswap.c main.c output.c utils.c tools.c instructionhelpers.c sorts.c utils2.c tools2.c
 NAME = push_swap
 CC = gcc
 

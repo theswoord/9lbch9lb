@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/08 18:11:48 by nbouhali          #+#    #+#             */
+/*   Updated: 2023/04/08 18:11:48 by nbouhali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 #include "./libft/libft.h"
 #include "./gnl/get_next_line.h"
 #include "./printf/ft_printf.h"
-// #include <limits.h>
 
 typedef struct s_stack
 {
@@ -17,9 +28,6 @@ char *strtwil;
 char **tableau;
 int tableauindex;
 int *copy;
-
-// int *indexes;
-
 }t_heck;
 
 void splitter(t_heck *pusw, char **av);
@@ -37,7 +45,6 @@ void swapper(int *p1 , int *p2 );
 void rotator(t_stack *stack);
 void reverserotator(t_stack *stack);
 void backsort(t_stack *stack, t_heck *checks);
-// void selectionSort(int *arr, int n);
 void sa(t_stack *stacka, t_stack *stackb);
 void sb(t_stack *stacka, t_stack *stackb);
 void ss(t_stack *stacka, t_stack *stackb);
@@ -69,4 +76,5 @@ int chkonbiggest(t_stack *stack);
 void freeingmachine(char **tableau, void *ptr , t_heck *checks, t_stack *stack,int size);
 void errorssghar(t_heck *checks, int size);
 void twodstrlen(t_heck *checks);
+void alreadysorted(t_stack *stacka, t_stack *stackb);
 #endif
