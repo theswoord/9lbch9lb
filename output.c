@@ -6,26 +6,29 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:20:05 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/08 17:46:51 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:48:16 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	errors(t_heck *checks, t_stack *stack, int code)
-{
-	write(2, "Error\n", 6);
-	if (code == 2)
-	{
-		freeingmachine(checks->tableau, NULL, NULL, NULL, stack->size);
-		freeingmachine(NULL, checks->copy, NULL, NULL, 0);
-		freeingmachine(NULL, NULL, checks, NULL, 0);
-		freeingmachine(NULL, stack->arr, NULL, stack, 0);
-	}
-	if (code == 3)
-		freeingmachine(NULL, stack->arr, NULL, stack, 0);
-	exit(1);
-}
+// void	errors(t_heck *checks, t_stack *stack,t_stack *stackb, int code)
+// {
+// 	write(2, "Error\n", 6);
+// 	if (code == 2)
+// 	{
+// 					freemachine(checks,stack,stackb,TABLEAU);
+// 		// freeingmachine(checks->tableau, NULL, NULL, NULL, stack->size);
+// 		// freeingmachine(NULL, checks->copy, NULL, NULL, 0);
+// 		// freeingmachine(NULL, NULL, checks, NULL, 0);
+// 		// freeingmachine(NULL, stack->arr, NULL, stack, 0);
+// 	}
+// 	if (code == 3)
+// 		freeingmachine(NULL, stack->arr, NULL, stack, 0);
+
+		
+// 	exit(1);
+// }
 int	allspaces(char *str)
 {
 	int	i;

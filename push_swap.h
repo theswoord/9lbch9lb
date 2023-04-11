@@ -16,6 +16,29 @@
 #include "./gnl/get_next_line.h"
 #include "./printf/ft_printf.h"
 
+enum{
+
+    DUPLICATE = 1,
+    FIRSTCHECK = 2,
+    SAISIE = 3,
+    SORT = 4,
+    DIGITIZER = 5,
+    CHECKS = 6,
+    END = 7,
+    SORTED = 8,
+    TABLEAU = 1,
+    STACKA = 2,
+    STACKB = 3,
+    FREEALL = 4,
+    ONLYA=5,
+    ONLYB=6,
+    ONLYS=7,
+    ONLYARR = 8,
+    ONLYSTACK=9,
+
+
+};
+
 typedef struct s_stack
 {
 int fogani;
@@ -32,10 +55,10 @@ int *copy;
 
 void splitter(t_heck *pusw, char **av);
 char* kassama(int ac,char **av);
-void digitizer(t_heck *checks, t_stack *stack);
-void saisie(t_heck *checks, t_stack *stack );
-void duplicata(t_stack *stack);
-void errors(t_heck *checks, t_stack *stack,int code);
+void digitizer(t_heck *checks, t_stack *stack, t_stack *stackb);
+void saisie(t_heck *checks, t_stack *stack , t_stack *stackb);
+void duplicata(t_stack *stack, t_stack *stackb, t_heck *checks);
+// void errors(t_heck *checks, t_stack *stack,int code);
 long    ft_latoi(const char *str);
 void printer(t_stack *stacka, t_stack *stackb, t_heck *checks);
 void printz(t_stack *stacka, t_stack *stackb);
@@ -77,4 +100,8 @@ void freeingmachine(char **tableau, void *ptr , t_heck *checks, t_stack *stack,i
 void errorssghar(t_heck *checks, int size);
 void twodstrlen(t_heck *checks);
 void alreadysorted(t_stack *stacka, t_stack *stackb);
+void freemachine(t_heck *checks, t_stack *stacka, t_stack *stackb, int code);
+void freemachinegeneral(t_heck *checks, t_stack *stacka, t_stack *stackb, int code);
+void errorsFinal(t_heck *checks, t_stack *stacka, t_stack *stackb, int code);
+void cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb, int code);
 #endif

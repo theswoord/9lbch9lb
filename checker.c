@@ -6,13 +6,13 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:19:58 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/08 18:10:14 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/11 18:16:11 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	digitizer(t_heck *checks, t_stack *stack)
+void	digitizer(t_heck *checks, t_stack *stack, t_stack *stackb)
 {
 	int	i;
 	int	j;
@@ -32,13 +32,15 @@ void	digitizer(t_heck *checks, t_stack *stack)
 				{
 					j++;
 					if (!ft_isdigit(checks->tableau[i][j]))
-						errorssghar(checks, checks->tableauindex);
-					if (j != 1 && ft_isdigit(checks->tableau[i][j - 2]))
-						errorssghar(checks, checks->tableauindex);
+						errorsFinal(checks,stack,stackb,DIGITIZER);
+					if (j != 1 && ft_isdigit(checks->tableau[i][j - 2])){
+						errorsFinal(checks,stack,stackb,DIGITIZER);
+					}
 				}
 			}
 			else
-				errorssghar(checks, checks->tableauindex);
+				errorsFinal(checks,stack,stackb,DIGITIZER);
+
 			j++;
 		}
 		j = 0;
@@ -46,7 +48,7 @@ void	digitizer(t_heck *checks, t_stack *stack)
 	}
 }
 
-void	saisie(t_heck *checks, t_stack *stack)
+void	saisie(t_heck *checks, t_stack *stack, t_stack *stackb)
 {
 	int	i;
 	int	j;
@@ -57,13 +59,11 @@ void	saisie(t_heck *checks, t_stack *stack)
 	while (checks->tableau[i])
 	{
 		if (ft_strlen(checks->tableau[i]) > 10)
-		{
-			errors(checks, stack, 2);
-		}
+			errorsFinal(checks,stack,stackb,SAISIE);
 		if (ft_latoi(checks->tableau[i]) > 2147483647)
-			errors(checks, stack, 2);
+			errorsFinal(checks,stack,stackb,SAISIE);
 		if (ft_latoi(checks->tableau[i]) < -2147483648)
-			errors(checks, stack, 2);
+			errorsFinal(checks,stack,stackb,SAISIE);
 		stack->arr[i] = ft_atoi(checks->tableau[j]);
 		checks->copy[i] = ft_atoi(checks->tableau[j]);
 		j--;
@@ -71,7 +71,7 @@ void	saisie(t_heck *checks, t_stack *stack)
 	}
 }
 
-void	duplicata(t_stack *stack)
+void	duplicata(t_stack *stack, t_stack *stackb, t_heck *checks)
 {
 	int	i;
 	int	j;
@@ -83,10 +83,7 @@ void	duplicata(t_stack *stack)
 		while (j < stack->size)
 		{
 			if (stack->arr[i] == stack->arr[j])
-			{
-				freeingmachine(NULL, stack->arr, NULL, stack, 0);
-				errors(NULL, NULL, 0);
-			}
+			errorsFinal(checks,stack,stackb,DUPLICATE);
 			j++;
 		}
 		i++;
