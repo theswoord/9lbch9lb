@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:53:38 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/08 17:55:01 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/11 20:53:27 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,36 +73,4 @@ int	finkayninrange(t_stack *stack, int start, int finish, int number)
 		i--;
 	}
 	return (0);
-}
-int	searchinrange(t_stack *stack, int start, int finish, int number)
-{
-	int	i;
-
-	i = start;
-	while (i > finish && i <= start)
-	{
-		if (number < stack->arr[i])
-		{
-			return (0);
-		}
-		i--;
-	}
-	return (1);
-}
-int	wachbiggest(int number, t_stack *stacka)
-{
-	int	i;
-	int	smallestindex;
-
-	i = 0;
-	smallestindex = stacka->arr[0];
-	while (i >= stacka->fogani)
-	{
-		if (smallestindex < stacka->arr[i])
-		{
-			smallestindex = stacka->arr[i];
-		}
-		i++;
-	}
-	return (smallestindex == number);
 }

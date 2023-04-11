@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:19:53 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/11 18:07:39 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/11 20:54:01 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	instructor(t_stack *stacka, t_stack *stackb)
 	int	finkayn;
 
 	stackb->arr = malloc(sizeof(int) * stacka->size);
-	// if (sortedascending(stacka) == 0)
-	// 	errorsFinal(NULL,stacka,stackb,SORT);
 	if (stacka->size == 2)
 		sortdial2(stacka, stackb);
 	else if (stacka->size == 3)

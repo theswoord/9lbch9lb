@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:26:56 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/11 20:47:50 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/11 20:50:01 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,18 @@ int	main(int ac, char **av)
 	twodstrlen(checks);
 	digitizer(checks, stacka,stackb);
 	allocator(stacka, stackb, checks);
-	saisie(checks, stacka,stackb); // nedem checks copy
+	saisie(checks, stacka,stackb);
 	freemachine(checks,stacka,stackb,TABLEAU);
-
-	
 	if (sortedascending(stacka) == 0){
 		cleanfree(checks,stacka,stackb,SORTED);
 		exit(0);
-	} // matnsach tfree 
-	// freeingmachine(checks->tableau, NULL, NULL, NULL, checks->tableauindex);
+	} 
 	duplicata(stacka,stackb,checks);
 	backsort(stacka, checks);
 	indicekeeper(stacka, checks);
 	cleanfree(checks,stacka,stackb,CHECKS);
-	// freeingmachine(NULL, checks->copy, NULL, NULL, 0);
-	// freeingmachine(NULL, NULL, checks, NULL, 0);
-	
-	
 	instructor(stacka, stackb);
 	cleanfree(checks,stacka,stackb,END);
-
-	
-	// freeingmachine(NULL, stacka->arr, NULL, stacka, 0);
-	// freeingmachine(NULL, stackb->arr, NULL, stackb, 0);
 }
 
 char	*kassama(int ac, char **av)
@@ -161,10 +150,7 @@ void cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb, int code){
 
 	if (code == CHECKS)
 	{
-			// freemachine(checks,stacka,stackb,TABLEAU);
-			// free(checks.)
 			free(checks->copy);
-			
 			free(checks);
 	}
 	if (code == END)
@@ -176,9 +162,6 @@ void cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb, int code){
 		freemachinegeneral(checks,stacka,stackb,ONLYB);
 		free(checks->copy);
 		free(checks);
-			// freemachine(checks,stacka,stackb,TABLEAU);
-		
-		/* code */
 	}
 	
 	
