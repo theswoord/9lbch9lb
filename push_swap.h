@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:48 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 02:28:34 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 04:24:48 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,6 @@ void		errorsfinal(t_heck *checks, t_stack *stacka, t_stack *stackb,
 				int code);
 void		cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb,
 				int code);
+void sort_big(t_stack *stacka, t_stack *stackb);
+void sort_big_parttwo(t_stack *stacka, t_stack *stackb,int big);
 #endif

@@ -6,7 +6,7 @@ SRC = checker.c instructionpush.c instructionsrotate.c instructionsswap.c main.c
 NAME = push_swap
 CC = gcc
 
-# CFLAGS= -Wall -Wextra -Werror
+CFLAGS= -Wall -Wextra -Werror
 msa7 = rm -rf
 obj = ${SRC:.c=.o}
 libraries = ./printf/libftprintf.a ./gnl/gnl.a ./libft/libft.a 
@@ -16,7 +16,7 @@ SUBDIRS = gnl printf libft
 all : ${NAME}
 
 ${NAME} : ${obj}
-	${CC} ${obj} $(libraries) -o $(NAME)
+	${CC} ${CFLAGS} ${obj} $(libraries) -o $(NAME)
 
 %.o: %.c
 	${CC} -c $< -o $@

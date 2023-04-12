@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:30:56 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 02:33:49 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:48:46 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,6 @@ void	cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb, int code)
 	}
 	if (code == END)
 		freemachine(checks, stacka, stackb, FREEALL);
-
 	if (code == SORTED)
 	{
 		freemachine(checks, stacka, stackb, STACKA);
