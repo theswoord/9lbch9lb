@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:05 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/08 18:11:06 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:40:40 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	rangefinder(int size)
 	y = fassila * size + 12;
 	return (y);
 }
+
 int	sorteddescending(t_stack *stacka)
 {
 	int	i;
@@ -57,8 +58,8 @@ int	findsmallest(int number, t_stack *stack)
 
 int	sortedascending(t_stack *stacka)
 {
-	int i;
-	int result;
+	int	i;
+	int	result;
 
 	result = 0;
 	i = 0;

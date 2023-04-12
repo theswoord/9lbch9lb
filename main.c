@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:26:56 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/11 20:50:01 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:37:37 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,145 +25,37 @@ int	main(int ac, char **av)
 	checks->tableau = ft_split(checks->strtwil, ' ');
 	free(checks->strtwil);
 	twodstrlen(checks);
-	digitizer(checks, stacka,stackb);
+	digitizer(checks, stacka, stackb);
 	allocator(stacka, stackb, checks);
-	saisie(checks, stacka,stackb);
-	freemachine(checks,stacka,stackb,TABLEAU);
-	if (sortedascending(stacka) == 0){
-		cleanfree(checks,stacka,stackb,SORTED);
+	saisie(checks, stacka, stackb);
+	freemachine(checks, stacka, stackb, TABLEAU);
+	if (sortedascending(stacka) == 0)
+	{
+		cleanfree(checks, stacka, stackb, SORTED);
 		exit(0);
-	} 
-	duplicata(stacka,stackb,checks);
+	}
+	duplicata(stacka, stackb, checks);
 	backsort(stacka, checks);
 	indicekeeper(stacka, checks);
-	cleanfree(checks,stacka,stackb,CHECKS);
+	cleanfree(checks, stacka, stackb, CHECKS);
 	instructor(stacka, stackb);
-	cleanfree(checks,stacka,stackb,END);
+	cleanfree(checks, stacka, stackb, END);
 }
 
 char	*kassama(int ac, char **av)
 {
-	int i = 1;
-	char *ster;
+	int		i;
+	char	*ster;
+
+	i = 1;
 	ster = malloc(1);
 	while (i < ac)
 	{
 		if (allspaces(av[i]) == 1)
-			errorsFinal(NULL,NULL,NULL,0);
-
+			errorsfinal(NULL, NULL, NULL, 0);
 		ster = ft_strjoingnl(ster, av[i]);
 		i++;
 		ster = ft_strjoingnl(ster, " ");
 	}
 	return (ster);
-}
-
-void freemachine(t_heck *checks, t_stack *stacka, t_stack *stackb, int code)
-{
-
-	if (code == TABLEAU)
-	{
-		int i = 0;
-		while (i < checks->tableauindex)
-		{
-			free(checks->tableau[i]);
-			i++;
-		}
-		free(checks->tableau);
-	}
-	if (code == STACKA)
-	{
-
-		free(stacka->arr);
-		free(stacka);
-	}
-	if (code == STACKB)
-	{
-		free(stackb->arr);
-		free(stackb);
-	}
-	if (code == FREEALL)
-	{
-		free(stacka->arr);
-		free(stacka);
-		free(stackb->arr);
-		free(stackb);
-	}
-}
-void freemachinegeneral(t_heck *checks, t_stack *stacka, t_stack *stackb, int code)
-{
-
-	if (code == ONLYS)
-	{
-		free(stacka);
-		free(stackb);
-		free(checks);
-	}
-	if (code == ONLYA)
-		free(stacka);
-	if (code == ONLYB)
-		free(stackb);
-	if (code == ONLYARR)
-	{
-		free(stacka->arr);
-		free(stackb->arr);
-	}
-	if (code == ONLYSTACK)
-	{
-		free(stacka);
-		free(stackb);
-	}
-}
-void errorsFinal(t_heck *checks, t_stack *stacka, t_stack *stackb, int code){
-
-	if (code == DIGITIZER){
-	freemachine(checks,stacka,stackb,TABLEAU);
-	freemachinegeneral(checks,stacka,stackb,ONLYSTACK);
-	free(checks);
-	}
-	if (code == SORT)
-		freemachine(checks,stacka,stackb,FREEALL);
-	if (code == SAISIE)
-	{
-		freemachine(checks,stacka,stackb,TABLEAU);
-		freemachine(checks,stacka,stackb,STACKA);
-		freemachinegeneral(checks,stacka,stackb,ONLYB);
-			free(checks->copy);
-			free(checks);
-
-
-	}
-	if (code == DUPLICATE)
-	{
-	freemachine(checks,stacka,stackb,STACKA);
-	freemachinegeneral(checks,stacka,stackb,ONLYB);
-	free(checks->copy);
-			free(checks);
-	}
-	
-	
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
-void cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb, int code){
-
-	if (code == CHECKS)
-	{
-			free(checks->copy);
-			free(checks);
-	}
-	if (code == END)
-		freemachine(checks,stacka,stackb,FREEALL);
-	
-	if (code == SORTED)
-	{
-		freemachine(checks,stacka,stackb,STACKA);
-		freemachinegeneral(checks,stacka,stackb,ONLYB);
-		free(checks->copy);
-		free(checks);
-	}
-	
-	
-	
 }

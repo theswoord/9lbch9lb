@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:19:58 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/11 18:16:11 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:42:44 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ void	digitizer(t_heck *checks, t_stack *stack, t_stack *stackb)
 				{
 					j++;
 					if (!ft_isdigit(checks->tableau[i][j]))
-						errorsFinal(checks,stack,stackb,DIGITIZER);
-					if (j != 1 && ft_isdigit(checks->tableau[i][j - 2])){
-						errorsFinal(checks,stack,stackb,DIGITIZER);
+						errorsfinal(checks, stack, stackb, DIGITIZER);
+					if (j != 1 && ft_isdigit(checks->tableau[i][j - 2]))
+					{
+						errorsfinal(checks, stack, stackb, DIGITIZER);
 					}
 				}
 			}
 			else
-				errorsFinal(checks,stack,stackb,DIGITIZER);
-
+				errorsfinal(checks, stack, stackb, DIGITIZER);
 			j++;
 		}
 		j = 0;
@@ -58,12 +58,12 @@ void	saisie(t_heck *checks, t_stack *stack, t_stack *stackb)
 	j = stack->size - 1;
 	while (checks->tableau[i])
 	{
-		if (ft_strlen(checks->tableau[i]) > 10)
-			errorsFinal(checks,stack,stackb,SAISIE);
+		if (ft_strlen(checks->tableau[i]) > 14)
+			errorsfinal(checks, stack, stackb, SAISIE);
 		if (ft_latoi(checks->tableau[i]) > 2147483647)
-			errorsFinal(checks,stack,stackb,SAISIE);
+			errorsfinal(checks, stack, stackb, SAISIE);
 		if (ft_latoi(checks->tableau[i]) < -2147483648)
-			errorsFinal(checks,stack,stackb,SAISIE);
+			errorsfinal(checks, stack, stackb, SAISIE);
 		stack->arr[i] = ft_atoi(checks->tableau[j]);
 		checks->copy[i] = ft_atoi(checks->tableau[j]);
 		j--;
@@ -83,7 +83,7 @@ void	duplicata(t_stack *stack, t_stack *stackb, t_heck *checks)
 		while (j < stack->size)
 		{
 			if (stack->arr[i] == stack->arr[j])
-			errorsFinal(checks,stack,stackb,DUPLICATE);
+				errorsfinal(checks, stack, stackb, DUPLICATE);
 			j++;
 		}
 		i++;
@@ -93,7 +93,9 @@ void	duplicata(t_stack *stack, t_stack *stackb, t_heck *checks)
 
 void	twodstrlen(t_heck *checks)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (checks->tableau[i])
 	{
 		checks->tableauindex++;

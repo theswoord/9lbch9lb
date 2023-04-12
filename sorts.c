@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:00 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/08 18:11:01 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:39:50 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	sortdial3(t_stack *stacka, t_stack *stackb)
 		&& stacka->arr[stacka->fogani] > stacka->arr[0])
 		rra(stacka, stackb);
 }
+
 void	sortdial5(t_stack *stacka, t_stack *stackb)
 {
 	while (findsmallest(stacka->arr[stacka->fogani], stacka) == 0)
@@ -53,6 +54,7 @@ void	sortdial5(t_stack *stacka, t_stack *stackb)
 	pa(stacka, stackb);
 	pa(stacka, stackb);
 }
+
 void	sortdial4(t_stack *stacka, t_stack *stackb)
 {
 	while (findsmallest(stacka->arr[stacka->fogani], stacka) == 0)
@@ -69,11 +71,13 @@ void	sortdial4(t_stack *stacka, t_stack *stackb)
 		sortdial3(stacka, stackb);
 	pa(stacka, stackb);
 }
+
 void	sortdial2(t_stack *stacka, t_stack *stackb)
 {
 	if (stacka->arr[0] < stacka->arr[1])
 		sa(stacka, stackb);
 }
+
 void	alreadysorted(t_stack *stacka, t_stack *stackb)
 {
 	while (stacka->fogani + 1)

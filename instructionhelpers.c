@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   instructionhelpers.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/12 02:24:38 by nbouhali          #+#    #+#             */
+/*   Updated: 2023/04/12 02:25:17 by nbouhali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	push(t_stack *stack, int intiger)
@@ -12,6 +24,7 @@ void	push(t_stack *stack, int intiger)
 		stack->arr[stack->fogani] = intiger;
 	}
 }
+
 void	pop(t_stack *stack)
 {
 	int	i;
@@ -26,6 +39,7 @@ void	pop(t_stack *stack)
 		i = stack->arr[stack->fogani--];
 	}
 }
+
 int	aamr(t_stack *stack)
 {
 	if (stack->fogani == stack->size - 1)
@@ -35,6 +49,7 @@ int	aamr(t_stack *stack)
 	else
 		return (0);
 }
+
 int	khawi(t_stack *stack)
 {
 	if (stack->fogani == -1)
@@ -44,10 +59,11 @@ int	khawi(t_stack *stack)
 	else
 		return (0);
 }
+
 void	reverserotator(t_stack *stack)
 {
-	int temp;
-	int i;
+	int	temp;
+	int	i;
 
 	i = 0;
 	temp = stack->arr[0];

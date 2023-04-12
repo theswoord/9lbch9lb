@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:53:38 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/11 20:53:27 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:40:04 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ long	ft_latoi(const char *str)
 	}
 	return (l7asol * ichara);
 }
+
 int	chkonbiggest(t_stack *stack)
 {
 	int	i;
@@ -59,6 +60,7 @@ int	chkonbiggest(t_stack *stack)
 	}
 	return (max_index);
 }
+
 int	finkayninrange(t_stack *stack, int start, int finish, int number)
 {
 	int	i;

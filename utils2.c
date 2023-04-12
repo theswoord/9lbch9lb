@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:11 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/08 18:11:12 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 02:41:16 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	swapper(int *p1, int *p2)
 	*p1 = *p2;
 	*p2 = temp;
 }
+
 void	rotator(t_stack *stack)
 {
 	int	temp;
@@ -34,6 +35,7 @@ void	rotator(t_stack *stack)
 	}
 	stack->arr[0] = temp;
 }
+
 void	backsort(t_stack *stack, t_heck *checks)
 {
 	int	i;
@@ -63,10 +65,11 @@ void	allocator(t_stack *stacka, t_stack *stackb, t_heck *checks)
 	stackb->size = stacka->size;
 	stackb->fogani = -1;
 }
+
 void	indicekeeper(t_stack *stacka, t_heck *checks)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < stacka->size)
