@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:48 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 04:24:48 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 06:59:41 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 enum
 {
-
 	DUPLICATE = 1,
 	FIRSTCHECK = 2,
 	SAISIE = 3,
@@ -36,7 +35,6 @@ enum
 	ONLYS = 7,
 	ONLYARR = 8,
 	ONLYSTACK = 9,
-
 };
 
 typedef struct s_stack
@@ -101,6 +99,7 @@ void		errorsfinal(t_heck *checks, t_stack *stacka, t_stack *stackb,
 				int code);
 void		cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb,
 				int code);
-void sort_big(t_stack *stacka, t_stack *stackb);
-void sort_big_parttwo(t_stack *stacka, t_stack *stackb,int big);
+void		sort_big(t_stack *stacka, t_stack *stackb);
+void		sort_big_parttwo(t_stack *stacka, t_stack *stackb, int big);
+int			basic_tests(t_heck *checks, int *i, int *j);
 #endif

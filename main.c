@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:26:56 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 02:37:37 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 06:57:49 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int ac, char **av)
 	checks->strtwil = kassama(ac, av);
 	checks->tableau = ft_split(checks->strtwil, ' ');
 	free(checks->strtwil);
-	twodstrlen(checks);
 	digitizer(checks, stacka, stackb);
 	allocator(stacka, stackb, checks);
 	saisie(checks, stacka, stackb);

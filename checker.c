@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:19:58 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 06:42:42 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 06:58:29 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,13 @@ void	digitizer(t_heck *checks, t_stack *stack, t_stack *stackb)
 
 	i = 0;
 	j = 0;
+	twodstrlen(checks);
 	while (checks->tableau[i])
 	{
 		stack->size++;
 		while (checks->tableau[i][j])
 		{
-			if (ft_isdigit(checks->tableau[i][j])
-				|| checks->tableau[i][j] == '+' || checks->tableau[i][j] == '-')
-			{
-				if (checks->tableau[i][j] == '+'
-					|| checks->tableau[i][j] == '-')
-				{
-					j++;
-					if (!ft_isdigit(checks->tableau[i][j]))
-						errorsfinal(checks, stack, stackb, DIGITIZER);
-					if (j != 1 && ft_isdigit(checks->tableau[i][j - 2]))
-					{
-						errorsfinal(checks, stack, stackb, DIGITIZER);
-					}
-				}
-			}
-			else
+			if (basic_tests(checks, &i, &j) == 1)
 				errorsfinal(checks, stack, stackb, DIGITIZER);
 			j++;
 		}

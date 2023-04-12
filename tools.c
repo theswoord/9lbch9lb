@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:53:38 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 06:42:38 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 06:55:03 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,23 @@ int	finkayninrange(t_stack *stack, int start, int finish, int number)
 		i--;
 	}
 	return (0);
+}
+
+int	basic_tests(t_heck *checks, int *i, int *j)
+{
+	if (ft_isdigit(checks->tableau[*i][*j]) || checks->tableau[*i][*j] == '+'
+		|| checks->tableau[*i][*j] == '-')
+	{
+		if (checks->tableau[*i][*j] == '+' || checks->tableau[*i][*j] == '-')
+		{
+			(void)*j++;
+			if (!ft_isdigit(checks->tableau[*i][*j]))
+				return (1);
+			if (*j != 1 && ft_isdigit(checks->tableau[*i][*j - 2]))
+				return (1);
+		}
+	}
+	else
+		return (1);
+	return (9);
 }

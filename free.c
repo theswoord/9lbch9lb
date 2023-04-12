@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 02:30:56 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 02:48:46 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/12 07:01:41 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,6 @@ void	freemachine(t_heck *checks, t_stack *stacka, t_stack *stackb, int code)
 	{
 		free(stacka->arr);
 		free(stacka);
-	}
-	if (code == STACKB)
-	{
-		free(stackb->arr);
-		free(stackb);
 	}
 	if (code == FREEALL)
 	{
