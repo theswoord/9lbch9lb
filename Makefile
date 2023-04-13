@@ -5,6 +5,7 @@
 SRC = checker.c instructionpush.c instructionsrotate.c instructionsswap.c main.c output.c utils.c tools.c instructionhelpers.c sorts.c utils2.c tools2.c free.c
 SRCB = bonus.c bonus_utils.c checker_bonus.c instructionpush_bonus.c instructionsrotate_bonus.c instructionsswap_bonus.c output_bonus.c utils_bonus.c tools_bonus.c instructionhelpers_bonus.c sorts_bonus.c utils2_bonus.c tools2_bonus.c free_bonus.c
 NAME = push_swap
+NAMEB = checker
 CC = gcc
 
 CFLAGS= -Wall -Wextra -Werror
@@ -35,7 +36,7 @@ libsclean:	$(SUBDIRS)
 	$(foreach dir, $(SUBDIRS), $(MAKE) -C $(dir) fclean;)
 
 bonus: ${objb}
-	${CC} ${CFLAGS} ${objb} $(libraries) -o checker
+	${CC} ${CFLAGS} ${objb} $(libraries) -o $(NAMEB)
 
 
 clean : 
@@ -45,5 +46,7 @@ cleanbonus :
 
 fclean : clean
 	${msa7} ${NAME}
+fcleanbonus : cleanbonus
+	${msa7} ${NAMEB}
 
 re : fclean all

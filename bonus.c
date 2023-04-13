@@ -16,11 +16,11 @@ int main(int ac , char** av){
 	allocator(stacka, stackb, checks);
 	saisie(checks, stacka, stackb);
 	freemachine(checks, stacka, stackb, TABLEAU);
-	if (sortedascending(stacka) == 0)
-	{
-		cleanfree(checks, stacka, stackb, SORTED);
-		exit(0);
-	}
+	// if (sortedascending(stacka) == 0)
+	// {
+	// 	cleanfree(checks, stacka, stackb, SORTED);
+	// 	exit(0);
+	// }
 	duplicata(stacka, stackb, checks);
     stackb->arr = malloc(sizeof(int) * stacka->size);
 while (1)
@@ -29,6 +29,7 @@ while (1)
 
     if (!instructions){
         checks->salit = 1;
+        free(instructions);
         break;
         }
     handler(instructions,stacka,stackb);
@@ -38,9 +39,7 @@ while (1)
 if (checks->salit == 1)
 {
     if (sortedascending(stacka) == 0 && stacka->fogani == stacka->size-1)
-    {
         write(1,"OK\n",3);
-    }
     else
         write(1,"KO\n",3);
 
@@ -48,30 +47,31 @@ if (checks->salit == 1)
 
 }
 
-char *handler(char *str,t_stack *stacka,t_stack *stackb){
+char *handler(char *str,t_stack *stacka,t_stack *stackb){ //void
 
     if (ft_strncmp(str,"sa\n",3)==0)
     sa(stacka,stackb);
-    if (ft_strncmp(str,"sb\n",3)==0)
+    else if (ft_strncmp(str,"sb\n",3)==0)
     sb(stacka,stackb);
-    if (ft_strncmp(str,"pb\n",3)==0)
+    else if (ft_strncmp(str,"pb\n",3)==0)
     pb(stacka,stackb);
-    if (ft_strncmp(str,"ss\n",3)==0)
+    else if (ft_strncmp(str,"ss\n",3)==0)
     ss(stacka,stackb);
-    if (ft_strncmp(str,"ra\n",3)==0)
+    else if (ft_strncmp(str,"ra\n",3)==0)
     ra(stacka,stackb);
-    if (ft_strncmp(str,"rb\n",3)==0)
+    else if (ft_strncmp(str,"rb\n",3)==0)
     rb(stacka,stackb);
-    if (ft_strncmp(str,"pa\n",3)==0)
+    else if (ft_strncmp(str,"pa\n",3)==0)
     pa(stacka,stackb);
-    if (ft_strncmp(str,"rr\n",3)==0)
+    else if (ft_strncmp(str,"rr\n",3)==0)
     rr(stacka,stackb);
-    if (ft_strncmp(str,"rra\n",4)==0)
+    else if (ft_strncmp(str,"rra\n",4)==0)
     rra(stacka,stackb);
-    if (ft_strncmp(str,"rrb\n",4)==0)
+    else if (ft_strncmp(str,"rrb\n",4)==0)
     rrb(stacka,stackb);
-    if (ft_strncmp(str,"rrr\n",4)==0)
+    else if (ft_strncmp(str,"rrr\n",4)==0)
     rrr(stacka,stackb);
-    
+    else
+        write(2,"error\n",6); //exit
     return(str);
 }
