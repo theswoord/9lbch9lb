@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:19:58 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/13 00:05:19 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/13 02:32:28 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	digitizer(t_heck *checks, t_stack *stack, t_stack *stackb)
 {

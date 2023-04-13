@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:26:56 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 06:57:49 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/13 02:57:56 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,4 @@ int	main(int ac, char **av)
 	cleanfree(checks, stacka, stackb, CHECKS);
 	instructor(stacka, stackb);
 	cleanfree(checks, stacka, stackb, END);
-}
-
-char	*kassama(int ac, char **av)
-{
-	int		i;
-	char	*ster;
-
-	i = 1;
-	ster = malloc(1);
-	while (i < ac)
-	{
-		if (allspaces(av[i]) == 1)
-			errorsfinal(NULL, NULL, NULL, 0);
-		ster = ft_strjoingnl(ster, av[i]);
-		i++;
-		ster = ft_strjoingnl(ster, " ");
-	}
-	return (ster);
 }
