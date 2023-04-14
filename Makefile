@@ -16,7 +16,7 @@ objb = ${SRCB:.c=.o}
 libraries = ./printf/libftprintf.a ./gnl/gnl.a ./libft/libft.a 
 SUBDIRS = gnl printf libft
 
-.SILENT:
+# .SILENT:
 all : ${NAME}
 
 ${NAME} : ${obj}

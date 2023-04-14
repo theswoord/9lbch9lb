@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:53:38 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/13 03:07:08 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 02:28:38 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	basic_tests(t_heck *checks, int *i, int *j)
 	{
 		if (checks->tableau[*i][*j] == '+' || checks->tableau[*i][*j] == '-')
 		{
-			*j = *j+1;
+			*j = *j + 1;
 			if (!ft_isdigit(checks->tableau[*i][*j]))
 				return (1);
 			if (*j != 1 && ft_isdigit(checks->tableau[*i][*j - 2]))
@@ -95,7 +95,6 @@ int	basic_tests(t_heck *checks, int *i, int *j)
 		return (1);
 	return (9);
 }
-
 
 char	*kassama(int ac, char **av)
 {

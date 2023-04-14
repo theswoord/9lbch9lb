@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/14 04:00:56 by nbouhali          #+#    #+#             */
+/*   Updated: 2023/04/14 04:00:57 by nbouhali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHECKER_H
-#define CHECKER_H
-
-
+# define CHECKER_H
 
 # include "./gnl/get_next_line.h"
 # include "./libft/libft.h"
@@ -41,7 +51,7 @@ typedef struct S_heck
 	char	**tableau;
 	int		tableauindex;
 	int		*copy;
-	int salit;
+	int		salit;
 }			t_heck;
 
 char		*kassama(int ac, char **av);
@@ -94,5 +104,7 @@ void		cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb,
 void		sort_big(t_stack *stacka, t_stack *stackb);
 void		sort_big_parttwo(t_stack *stacka, t_stack *stackb, int big);
 int			basic_tests(t_heck *checks, int *i, int *j);
-char *handler(char *str,t_stack *stacka,t_stack *stackb);
+void		handler(char *str, t_stack *stacka, t_stack *stackb);
+void		catchinginstructor(char *instructions, t_heck *checks,
+				t_stack *stacka, t_stack *stackb);
 #endif
