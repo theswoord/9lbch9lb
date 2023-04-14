@@ -6,16 +6,16 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 04:00:56 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/14 06:49:52 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:56:23 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include "./gnl/get_next_line.h"
-# include "./libft/libft.h"
-# include "./printf/ft_printf.h"
+# include "../gnl/get_next_line.h"
+# include "../libft/libft.h"
+# include "../printf/ft_printf.h"
 
 enum
 {

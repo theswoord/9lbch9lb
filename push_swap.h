@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:48 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/14 06:31:08 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:05:07 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include "./gnl/get_next_line.h"
 # include "./libft/libft.h"
 # include "./printf/ft_printf.h"
+# include <unistd.h>
+# include <stdlib.h>
 
 enum
 {
