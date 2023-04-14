@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:48 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/12 06:59:41 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 06:31:08 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,5 @@ void		cleanfree(t_heck *checks, t_stack *stacka, t_stack *stackb,
 void		sort_big(t_stack *stacka, t_stack *stackb);
 void		sort_big_parttwo(t_stack *stacka, t_stack *stackb, int big);
 int			basic_tests(t_heck *checks, int *i, int *j);
+int zerofree(char *str);
 #endif

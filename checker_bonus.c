@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:19:58 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/14 02:20:58 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 06:50:30 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	saisie(t_heck *checks, t_stack *stack, t_stack *stackb)
 	j = stack->size - 1;
 	while (checks->tableau[i])
 	{
+		if (zerofree(checks->tableau[i]) == 1)
+			errorsfinal(checks, stack, stackb, SAISIE);
 		if (ft_latoi(checks->tableau[i]) > 2147483647)
 			errorsfinal(checks, stack, stackb, SAISIE);
 		if (ft_latoi(checks->tableau[i]) < -2147483648)
@@ -85,4 +87,25 @@ void	twodstrlen(t_heck *checks)
 		checks->tableauindex++;
 		i++;
 	}
+}
+
+int	zerofree(char *str)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '0' || str[i] == '-' || str[i] == '+')
+			i++;
+		else if (str[i] != '0' || str[i] != '-' || str[i] != '+')
+			j++;
+		i++;
+	}
+	if (j > 11)
+		return (1);
+	else
+		return (0);
 }
