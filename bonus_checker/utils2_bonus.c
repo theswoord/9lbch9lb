@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:11 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/13 02:32:53 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:02:32 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,54 +36,9 @@ void	rotator(t_stack *stack)
 	stack->arr[0] = temp;
 }
 
-void	backsort(t_stack *stack, t_heck *checks)
-{
-	int	i;
-	int	mynum;
-	int	a;
-
-	i = 1;
-	a = 0;
-	while (i < stack->size)
-	{
-		mynum = checks->copy[i];
-		a = i - 1;
-		while (a >= 0 && checks->copy[a] < mynum)
-		{
-			checks->copy[a + 1] = checks->copy[a];
-			a--;
-		}
-		checks->copy[a + 1] = mynum;
-		i++;
-	}
-}
-
 void	allocator(t_stack *stacka, t_stack *stackb, t_heck *checks)
 {
 	stacka->arr = malloc(sizeof(int) * stacka->size);
-	checks->copy = malloc(sizeof(int) * stacka->size);
 	stackb->size = stacka->size;
 	stackb->fogani = -1;
-}
-
-void	indicekeeper(t_stack *stacka, t_heck *checks)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < stacka->size)
-	{
-		j = 0;
-		while (j < stacka->size)
-		{
-			if (stacka->arr[i] == checks->copy[j])
-			{
-				stacka->arr[i] = stacka->fogani - j;
-				j = stacka->size;
-			}
-			j++;
-		}
-		i++;
-	}
 }

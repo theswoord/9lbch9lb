@@ -6,21 +6,11 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:11:05 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/13 02:32:50 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:13:20 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-int	rangefinder(int size)
-{
-	int		y;
-	float	fassila;
-
-	fassila = 0.03;
-	y = fassila * size + 12;
-	return (y);
-}
 
 int	sorteddescending(t_stack *stacka)
 {
@@ -38,22 +28,6 @@ int	sorteddescending(t_stack *stacka)
 		i++;
 	}
 	return (result);
-}
-
-int	findsmallest(int number, t_stack *stack)
-{
-	int	i;
-	int	bigger;
-
-	i = 0;
-	bigger = stack->arr[0];
-	while (i <= stack->fogani)
-	{
-		if (bigger > stack->arr[i])
-			bigger = stack->arr[i];
-		i++;
-	}
-	return (bigger == number);
 }
 
 int	sortedascending(t_stack *stacka)

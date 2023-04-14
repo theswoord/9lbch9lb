@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:19:58 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/14 06:50:30 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:17:32 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	saisie(t_heck *checks, t_stack *stack, t_stack *stackb)
 		if (ft_latoi(checks->tableau[i]) < -2147483648)
 			errorsfinal(checks, stack, stackb, SAISIE);
 		stack->arr[i] = ft_atoi(checks->tableau[j]);
-		checks->copy[i] = ft_atoi(checks->tableau[j]);
 		j--;
 		i++;
 	}

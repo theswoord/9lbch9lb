@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:53:38 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/14 02:28:38 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:15:58 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,6 @@ int	chkonbiggest(t_stack *stack)
 		i++;
 	}
 	return (max_index);
-}
-
-int	finkayninrange(t_stack *stack, int start, int finish, int number)
-{
-	int	i;
-
-	i = start;
-	while (i > finish && i <= start)
-	{
-		if (number >= stack->arr[i])
-			return (1);
-		if (number <= stack->arr[i])
-			return (-1);
-		i--;
-	}
-	return (0);
 }
 
 int	basic_tests(t_heck *checks, int *i, int *j)

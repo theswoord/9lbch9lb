@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 02:30:57 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/14 04:06:07 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:01:09 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ int	main(int ac, char **av)
 	stackb->arr = malloc(sizeof(int) * stacka->size);
 	catchinginstructor(instructions, checks, stacka, stackb);
 	cleanfree(NULL, stacka, stackb, END);
+	cleanfree(checks, NULL, NULL, CHECKS);
 }
 
-void	handler(char *str, t_stack *stacka, t_stack *stackb)
+void	handler(t_heck *checks, char *str, t_stack *stacka, t_stack *stackb)
 {
 	if (ft_strncmp(str, "sa\n", 3) == 0)
 		sa(stacka, stackb);
@@ -62,7 +63,7 @@ void	handler(char *str, t_stack *stacka, t_stack *stackb)
 	else if (ft_strncmp(str, "rrr\n", 4) == 0)
 		rrr(stacka, stackb);
 	else
-		errorsfinal(NULL, stacka, stackb, END);
+		errorchecker(checks, stacka, stackb, BONUS);
 }
 
 void	catchinginstructor(char *instructions, t_heck *checks, t_stack *stacka,
@@ -77,7 +78,7 @@ void	catchinginstructor(char *instructions, t_heck *checks, t_stack *stacka,
 			free(instructions);
 			break ;
 		}
-		handler(instructions, stacka, stackb);
+		handler(checks, instructions, stacka, stackb);
 		free(instructions);
 	}
 	if (checks->salit == 1)
