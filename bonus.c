@@ -16,11 +16,6 @@ int main(int ac , char** av){
 	allocator(stacka, stackb, checks);
 	saisie(checks, stacka, stackb);
 	freemachine(checks, stacka, stackb, TABLEAU);
-	// if (sortedascending(stacka) == 0)
-	// {
-	// 	cleanfree(checks, stacka, stackb, SORTED);
-	// 	exit(0);
-	// }
 	duplicata(stacka, stackb, checks);
     stackb->arr = malloc(sizeof(int) * stacka->size);
 while (1)

@@ -6,7 +6,7 @@
 /*   By: nbouhali < nbouhali@student.1337.ma >      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:19:58 by nbouhali          #+#    #+#             */
-/*   Updated: 2023/04/13 02:32:28 by nbouhali         ###   ########.fr       */
+/*   Updated: 2023/04/14 02:20:58 by nbouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	saisie(t_heck *checks, t_stack *stack, t_stack *stackb)
 	j = stack->size - 1;
 	while (checks->tableau[i])
 	{
-		if (ft_strlen(checks->tableau[i]) > 14)
-			errorsfinal(checks, stack, stackb, SAISIE);
 		if (ft_latoi(checks->tableau[i]) > 2147483647)
 			errorsfinal(checks, stack, stackb, SAISIE);
 		if (ft_latoi(checks->tableau[i]) < -2147483648)
